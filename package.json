@@ -1,6 +1,6 @@
 {
-  "name": "black-engine-starter",
-  "description": "Scaffold out a game supported by Black Engine.",
+  "name": "unistroke-creator",
+  "description": "Record points of unistrokes.",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -11,12 +11,6 @@
     "build": "webpack --mode production --display-used-exports",
     "lint": "eslint 'src/**/*.js'"
   },
-  "keywords": [
-    "HTML5",
-    "black-engine",
-    "Blacksmith 2D",
-    "Webpack"
-  ],
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
