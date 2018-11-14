@@ -6,23 +6,21 @@ import {
 } from 'black-engine'
 import { SceneManager } from 'black-box'
 
-import Preloader from './Scenes/Preloader'
-import Playground from './Scenes/Playground'
+import Board from './Scenes/Board'
 
 const { default: sceneManager } = SceneManager
-sceneManager.register('preloader', Preloader)
-sceneManager.register('playground', Playground)
+sceneManager.register('board', Board)
 
 class Game extends GameObject {
   constructor() {
     super()
 
-    Black.stage.scaleMode = StageScaleMode.COVER
-    Black.stage.setSize(750, 1500)
-    Black.stage.orientation = StageOrientation.PORTRAIT
+    Black.stage.scaleMode = StageScaleMode.LETTERBOX
+    Black.stage.setSize(400, 400)
+    Black.stage.orientation = StageOrientation.UNIVERSAL
     Black.stage.orientationLock = true
 
-    sceneManager.load('preloader')
+    sceneManager.load('board')
   }
 }
 
