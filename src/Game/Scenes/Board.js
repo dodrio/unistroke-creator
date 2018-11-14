@@ -1,4 +1,4 @@
-import { GameObject, Input, Graphics } from 'black-engine'
+import { GameObject, Input, TextField, Graphics } from 'black-engine'
 import { Scene, Layer } from 'black-box'
 import { Mask } from 'black-box/Display'
 
@@ -14,6 +14,7 @@ class Board extends Scene {
 
   onAdded() {
     this.addBG()
+    this.addPointsCounter()
 
     this.bg.on('pointerDown', () => {
       this._drawing = true
@@ -30,6 +31,9 @@ class Board extends Scene {
       this.currentPoint = this.bg.globalToLocal(Input.pointerPosition)
       this._points.push(this.currentPoint)
       this.connectPoints(this.prevPoint, this.currentPoint)
+
+      const pointsCount = this._points.length
+      this.setCounter(pointsCount)
     })
 
     Input.on('pointerUp', () => {
@@ -68,6 +72,18 @@ class Board extends Scene {
 
   resetPoints() {
     this._points = []
+  }
+
+  addPointsCounter() {
+    const counter = new TextField('0 Point')
+    this.counter = counter
+    counter.alignAnchor(0, 0)
+    counter.size = 14
+    this.addChild(counter)
+  }
+
+  setCounter(count) {
+    this.counter.text = `${count} pointers`
   }
 
   addCopyButton() {
