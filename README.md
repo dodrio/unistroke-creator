@@ -15,4 +15,4 @@
 
 ## License
 
-MIT © 2Players Studio
+[MIT](https://2players.studio/licenses/MIT) © [2Players Studio](https://2players.studio/)
